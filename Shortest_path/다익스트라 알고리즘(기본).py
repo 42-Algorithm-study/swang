@@ -60,4 +60,13 @@ for i in range(1,n+1):
 4 5 1
 5 3 1
 5 6 2
+
+---출력값---
+1 is start node
+node : 2 , distance : 2
+node : 3 , distance : 3
+node : 4 , distance : 1
+node : 5 , distance : 2
+node : 6 , distance : 4
+
 '''
