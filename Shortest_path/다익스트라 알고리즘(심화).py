@@ -27,7 +27,7 @@ def dijkstra(start):
             sum_cost = cost + _tuple[1]
             if sum_cost < d[_tuple[0]]: # dst노드를 거쳐가는 경우가 더 짧은 거리일 때
                 d[_tuple[0]] = sum_cost # 거리정보 테이블에 최단거리 갱신
-                heapq.heappush(q, (sum_cost, _tuple[0])) # 큐에 (최단거리, 노드) 튜플 추가
+                heapq.heappush(q, (sum_cost, _tuple[0])) # 큐에 (최단거리, 노드) 튜플 추가 -> 큐에 최대로 담기는 튜플은 간선의 개수
 
 dijkstra(start)
 
