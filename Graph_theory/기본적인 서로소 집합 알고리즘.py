@@ -14,11 +14,14 @@ _set = []
 for i in range(0, N + 1):
     parent.append(i)
 
+
 for i in range(M):
     A, B = map(int, input().split())
     p = min(parent[A], parent[B])
     parent[A] = p
     parent[B] = p
+# 부모노드가 더 작은 애를 뽑아서 부모노드를 넣어줌-> 집합을 합치는 과정이 맞나?
+
 
 # 부모노드 정리
 def set_parent(me, parent):
@@ -26,11 +29,14 @@ def set_parent(me, parent):
         return set_parent(parent[me], parent)
     else:
         return me
+# 이 부분은 find_parent로 함수이름을 선언했다면 더 좋았겠다.
 
 _set.append(0)
 for i in range(1, N + 1):
     _set.append(set_parent(i, parent))
+# 부모 노드를 굳이 리스트에 저장하지않고, 출력시 바로 반환하도록 하도록 개선할 수 있음.
     
+
 # 각 원소가 속한 집합
 print("각 원소가 속한 집합 :", end=" ")
 for i in range(1, N +1 ):
