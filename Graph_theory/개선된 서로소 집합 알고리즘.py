@@ -5,11 +5,12 @@
 def _union(A, B):
   a = _find(A)
   b = _find(B)
-  # 각 부모 노드를 찾아서 더 작은 수로 갱신 (집합을 합치는 과정)
+  # **루트노드의 부모**를 바꿔줘야함!!
+  # 루트노드의만 바꿔주면 하위 노드들은 알아서 따라옴
   if a < b:
-    parent[B] = a
+    parent[b] = a
   else:
-    parent[A] = b
+    parent[a] = b
 
 def _find(i):
   if i != parent[i]:
